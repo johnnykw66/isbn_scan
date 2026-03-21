@@ -112,7 +112,7 @@ while True:
                 df = pd.concat([df, pd.DataFrame({'ISBN':[isbn], 'Timestamp':[timestamp],'Title':[title], 'Authors':[authors], 'Published':[year]})], ignore_index=True)
                 df.to_csv(CSV_FILE, index=False)
                 print(f"Scanned ISBN: {isbn} at {timestamp}")
-
+                time.sleep(2)
             except ISBNLookupError as e:
                 bad_book()
                 print("ISBN Lookup failed:", e)
